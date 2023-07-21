@@ -8,7 +8,7 @@ export default function SelectedContact({ selectedContactId, setSelectedContactI
     useEffect(() => {
         async function fetchContact() {
             try {
-                const response = await fetch(`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`);
+                const response = await fetch(`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`); {/*Use https, netlify won't make requests over http */}
                 const result = await response.json();
                 setContact(result);
             } catch (error) {
