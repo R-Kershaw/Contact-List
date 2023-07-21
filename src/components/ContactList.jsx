@@ -27,8 +27,8 @@ export default function ContactList({ setSelectedContactId }) {
 
     console.log("Contacts: ", contacts);
 
-    return (
-        <table>
+    if (contacts) {
+        return (<table>
             <thead>
                 <tr>
                     <th colSpan="3">Contact List</th>
@@ -44,7 +44,9 @@ export default function ContactList({ setSelectedContactId }) {
                     return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />;
                 })}
             </tbody>
-        </table>
-    );
+        </table>);
+    } else {
+        return null;
+    }
 }
 
