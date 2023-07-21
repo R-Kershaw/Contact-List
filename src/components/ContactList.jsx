@@ -33,13 +33,13 @@ export default function ContactList({ setSelectedContactId }) {
                 <tr>
                     <th colSpan="3">Contact List</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
+                <tr> {/*Moved to thead for styling purposes */}
                     <td>Name</td>
                     <td>Email</td>
                     <td>Phone</td>
                 </tr>
+            </thead>
+            <tbody>
                 {contacts.map((contact) => {
                     return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />;
                 })}
